@@ -14,7 +14,8 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter @Setter
+@Getter
+@Setter
 public class Donation {
 
     @Id
@@ -28,7 +29,7 @@ public class Donation {
     private List<Category> categories;
 
     @OneToMany
-    private List <Institution> institution;
+    private List<Institution> institution;
 
     private String street;
 
@@ -41,8 +42,6 @@ public class Donation {
     private LocalTime pickUpTime;
 
     private String pickUpComment;
-
-
 
 
 }
