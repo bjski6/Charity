@@ -10,7 +10,8 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter @Setter
+@Getter
+@Setter
 public class Institution {
 
     @Id
@@ -20,5 +21,6 @@ public class Institution {
     private String name;
 
     private String description;
+
 
 }

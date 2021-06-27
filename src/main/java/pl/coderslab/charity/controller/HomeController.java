@@ -1,4 +1,4 @@
-package pl.coderslab.charity;
+package pl.coderslab.charity.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,8 +27,10 @@ public class HomeController {
     public String homeAction(Model model){
         List<Institution> institutions = institutionRepository.findAll();
         Integer sumQuantity = donationRepository.sumQuantity();
+        Integer countDonation = donationRepository.countDonation();
         model.addAttribute("institutions", institutions);
         model.addAttribute("sumQuantity", sumQuantity);
+        model.addAttribute("countDonation", countDonation);
         return "index";
     }
 }

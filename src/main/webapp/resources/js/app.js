@@ -164,6 +164,13 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
       // TODO: get data from inputs and show them in summary
+
+
+      const quantity= document.getElementById("quantity")
+      console.log(quantity.value);
+      const category= document.getElementById("category")
+      console.log(category);
+
     }
 
   }
