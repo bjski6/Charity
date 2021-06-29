@@ -179,3 +179,45 @@ document.addEventListener("DOMContentLoaded", function() {
     new FormSteps(form);
   }
 });
+function createSummary() {
+  const quantity = document.querySelector("#quantity").value;
+  const street = document.querySelector("#street").value;
+  const city = document.querySelector("#city").value;
+  const zipCode = document.querySelector("#zipCode").value;
+  const phoneNo = document.querySelector("#phoneNo").value;
+  const pickUpDate = document.querySelector("#pickUpDate").value;
+  const pickUpTime = document.querySelector("#pickUpTime").value;
+  const pickUpComment = document.querySelector("#pickUpComment").value;
+  console.log(quantity);
+
+
+
+  document.querySelector("#summary-street").innerText = street;
+  document.querySelector("#summary-city").innerText = city;
+  document.querySelector("#summary-zipCode").innerText = zipCode;
+  document.querySelector("#summary-phoneNo").innerText = phoneNo;
+
+  document.querySelector("#summary-pickUpDate").innerText = pickUpDate;
+  document.querySelector("#summary-pickUpTime").innerText = pickUpTime;
+  document.querySelector("#summary-pickUpComment").innerText = pickUpComment;
+
+
+  const institution = document.querySelector("input[name='institution']:checked").parentElement.lastElementChild.firstElementChild.innerText;
+  document.querySelector("#summary-institution").innerHTML = institution;
+
+  const categories = document.querySelectorAll("input[name='categories']:checked");
+
+  let categoriesString = "";
+  let catStrings = [...categories].map(cat => cat.parentElement.lastElementChild.innerText);
+
+  for(let cat of catStrings) {
+    categoriesString = categoriesString + cat + "<br />";
+  }
+
+  document.querySelector("#summary-quantity").innerHTML = quantity + " worki/ów, w których znajdują się: <br />" + categoriesString;
+
+}
+
+
+const btnNext = document.querySelector("#show-summary");
+btnNext.addEventListener('click', createSummary);

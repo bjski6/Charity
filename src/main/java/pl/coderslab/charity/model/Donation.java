@@ -28,11 +28,15 @@ public class Donation {
     //liczba worków
     private Integer quantity;
 
-    @ManyToOne
-    private Category category;
+    @ManyToMany()
+    @JoinColumn(name = "categories_id")
+    private List<Category> categories;
 
     @ManyToOne
     private Institution institution;
+
+    @ManyToOne
+    private User user;
 
     @NotBlank
     private String street;

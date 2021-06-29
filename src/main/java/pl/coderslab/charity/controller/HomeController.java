@@ -1,5 +1,6 @@
 package pl.coderslab.charity.controller;
 
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +32,9 @@ public class HomeController {
         model.addAttribute("institutions", institutions);
         model.addAttribute("sumQuantity", sumQuantity);
         model.addAttribute("countDonation", countDonation);
+        if(SecurityContextHolder.getContext().getAuthentication().isAuthenticated()){
+            return "redirect:/check";
+        }
         return "index";
     }
 }
