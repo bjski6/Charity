@@ -111,7 +111,7 @@
 
         <ul class="help--slides-items">
 
-                <li> <c:forEach items="${institutions}" var="institution" varStatus="loop">
+                <li> <c:forEach items="${institutions}" var="institution" varStatus="loop" >
 
                 <div class="col">
                     <div class="title"><c:out value="${institution.name}"/></div>

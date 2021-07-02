@@ -32,9 +32,9 @@ public class HomeController {
         model.addAttribute("institutions", institutions);
         model.addAttribute("sumQuantity", sumQuantity);
         model.addAttribute("countDonation", countDonation);
-        if(SecurityContextHolder.getContext().getAuthentication().isAuthenticated()){
+        /*if(SecurityContextHolder.getContext().getAuthentication().isAuthenticated()){
             return "redirect:/check";
-        }
+        }*/
         return "index";
     }
 }
